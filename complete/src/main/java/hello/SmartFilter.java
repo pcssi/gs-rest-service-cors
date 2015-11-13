@@ -1,21 +1,14 @@
 package hello;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import org.apache.catalina.ssi.ByteArrayServletOutputStream;
 
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
-
-import org.apache.catalina.ssi.ByteArrayServletOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 //@Component
 class SmartFilter implements Filter {
