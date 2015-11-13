@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponseWrapper;
 import org.apache.catalina.ssi.ByteArrayServletOutputStream;
 
 //@Component
-public class SmartFilter implements Filter {
+class SmartFilter implements Filter {
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
@@ -82,7 +82,7 @@ public class SmartFilter implements Filter {
 	
 	private class SyntheticResponse extends HttpServletResponseWrapper {
 
-		private ServletOutputStream os;
+		private final ServletOutputStream os;
 
 		public SyntheticResponse(HttpServletResponse response) {
 			super(response);
