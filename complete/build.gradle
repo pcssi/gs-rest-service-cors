@@ -9,18 +9,22 @@ buildscript {
 
 plugins {
   id 'java'
-  id 'eclipse'
   id 'idea'
+  id 'net.researchgate.release' version '2.3.4'
 }
 
 apply plugin: 'spring-boot'
+
+tasks.findByName('startScripts').enabled = false
+tasks.findByName('distTar').enabled = false
+tasks.findByName('distZip').enabled = false
 
 jar {
     baseName = 'gs-rest-service-cors'
 }
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
